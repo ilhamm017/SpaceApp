@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Peraz_Lemon</string>
+    <string name="pilih_lemon">Tap pada pohon lemon untuk memilih lemon</string>
+    <string name="tap_tap_lemon">Tap tap pada lemon untuk memerasnya</string>
+    <string name="minum_lemon">Tap jus lemon untuk meminumnya</string>
+    <string name="mulai_lagi">Tap gelas kosong untuk memulai lagi</string>
+    <string name="pohon_lemon">Pohon Lemon</string>
+    <string name="lemon">Lemon</string>
+    <string name="gelas_lemon">Gelas lemon</string>
+    <string name="gelas_kosong">Gelas kosong</string>
+    <string name="kocok">Kocok</string>
+    <string name="daduApp">Kocok Terus Dadumu</string>
+    <string name="lemonApp">Peras Terus Lemonmu</string>
+</resources>
