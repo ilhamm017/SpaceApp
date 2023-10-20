@@ -54,23 +54,23 @@ class MainActivity : ComponentActivity() {
 @Preview(showBackground = true)
 @Composable
 fun SpaceApp() {
-    var currentIndex by remember {
+    var currentIndex by remember { //Current inden dengan remember yang menyimpan value awal 1
         mutableStateOf(1)
     }
-    val listFunction = listOf(
+    val listFunction = listOf( //list fungsi yang nantinya akan dipanggil
         LemonadeApp(),
         KocokDaduApp()
     )
 
-    Surface(
+    Surface( //container surface yang menjadi pengisi halaman
         modifier = Modifier
             .fillMaxSize()
     ) {
-        Column(
+        Column( //format column
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            Box(
+            Box( //Menggunakan box untuk menampilkan konten
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f)
@@ -83,7 +83,7 @@ fun SpaceApp() {
                     }
                 }
             }
-            Box(
+            Box( //Menggunakan box untuk menampilkan text judul
                 modifier = Modifier
 //                    .weight(1f / 4f)
                     .padding(10.dp)
@@ -110,7 +110,7 @@ fun SpaceApp() {
                     }
                 }
             }
-            Box(
+            Box( //Menggunakan box untuk menempatkan navigasi
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1 / 6f)
@@ -121,7 +121,7 @@ fun SpaceApp() {
                         modifier = Modifier
                             .fillMaxWidth()
                     ) {
-                        Button(
+                        Button( //Tombol untuk navigasi mundur
                             onClick = {
                                       if (currentIndex > 1) {
                                           currentIndex --
@@ -135,7 +135,7 @@ fun SpaceApp() {
 
                         }
                         Spacer(modifier = Modifier.width(10.dp))
-                        Button(
+                        Button( //Tombol untuk navigasi maju
                             onClick = {
                                       if (currentIndex < listFunction.size) {
                                           currentIndex ++
@@ -158,18 +158,18 @@ fun SpaceApp() {
 // ===============================================================================
 
 @Composable
-fun LemonadeApp() {
-    var stepTerkini by remember {
+fun LemonadeApp() { //fungsi lemonadeApp akan menampilkan game sederhana memeras lemon
+    var stepTerkini by remember { //variabel yang menyimpan step terkini
         mutableStateOf(1)
     }
-    var perasanLemon by remember {
+    var perasanLemon by remember { //variabel yang menyimpan jumlah perasan lemon
         mutableStateOf(1)
     }
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.background
     ) {
-        when (stepTerkini) {
+        when (stepTerkini) { //operator logika yang menentukan step yang akan ditampilkan
             1 -> {
                 Column(
                     horizontalAlignment = Alignment.CenterHorizontally,
@@ -213,8 +213,8 @@ fun LemonadeApp() {
                         modifier = Modifier
                             .wrapContentSize()
                             .clickable {
-                                perasanLemon += (1..10).random()
-                                if (perasanLemon >= 100) {
+                                perasanLemon += (1..10).random() //Perulangan yang akan menambahkan berapa banyak perasan lemon
+                                if (perasanLemon >= 100) { //Jika perasan lemon lebih dari atau sama dengan 100, maka akan lanjut step selanjutnya
                                     stepTerkini = 3
                                 }
                             }
